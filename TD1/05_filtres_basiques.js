@@ -144,9 +144,9 @@ async function main() {
     });
 
     // === FILTRES SUR CHAMPS IMBRIQUÉS ===
-    console.log('\n🔍 13. Membres avec un numéro de téléphone');
+    console.log('\n🔍 13. Membres avec une ville dans leur adresse');
     const membresAvecTel = await membres.find({
-      telephone: { $exists: true }
+      'adresse.ville': { $exists: true }
     }).toArray();
     console.log(`Nombre de membres : ${membresAvecTel.length}`);
     membresAvecTel.forEach(membre => {

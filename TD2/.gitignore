@@ -1,0 +1,7 @@
+# Ignore everything in TD2
+*
+
+# Except airbnb.json and README.md
+!airbnb.json
+!README.md
+!.gitignore

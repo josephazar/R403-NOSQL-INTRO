@@ -28,7 +28,7 @@ async function main() {
     // === $set : MODIFIER UN CHAMP ===
     console.log('✏️ 1. Modifier avec $set - Marquer "1984" comme non disponible');
     const result1 = await livres.updateOne(
-      { titre: '1984' },
+      { titre: '1984' }, // WHERE
       { $set: { disponible: false } }
     );
     console.log(`Documents modifiés : ${result1.modifiedCount}`);

@@ -47,11 +47,12 @@ async function main() {
     livresDisponibles.forEach(livre => {
       console.log(`  - ${livre.titre} (${livre.nombreExemplaires} exemplaires)`);
     });
-
+    
+    // select titre from livres where ...
     // === LECTURE AVEC PROJECTION (sélectionner certains champs) ===
     console.log('\n📖 4. Lire uniquement le titre et l\'auteur des livres');
     const titresEtAuteurs = await livres.find(
-      {},
+      {}, // WHERE
       { projection: { titre: 1, auteur: 1, _id: 0 } }
     ).toArray();
     titresEtAuteurs.forEach(livre => {
